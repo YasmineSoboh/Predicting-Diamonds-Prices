@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Version 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .input-text {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .scrollable {
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+
+        .checkbox {
+            margin-top: 10px;
+        }
+
+        .radio {
+            margin-top: 10px;
+        }
+
+        .slider {
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        .list {
+            margin-top: 10px;
+        }
+
+        .canvas {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="page active-page">
+        <h1>Page 1</h1>
+        <img src="C:/Users/yasmi/Dropbox/Me/Universities/ASU/1) Computer Science - Online/565 Software Verification and Validation/Projects/Project 3/image.jpg" alt="Image 1" width="200" height="200">
+        <br><br>
+        <label>Label 1:</label>
+        <br>
+        <input type="text" class="input-text" placeholder="Enter text">
+        <br><br>
+        <input type="checkbox" class="checkbox"> Checkbox 1
+        <br><br>
+        <div class="scrollable">
+            <label>List 1:</label>
+            <br>
+            <select class="list" size="5">
+                <option>Item 1</option>
+                <option>Item 2</option>
+                <option>Item 3</option>
+                <option>Item 4</option>
+                <option>Item 5</option>
+            </select>
+        </div>
+        <br><br>
+        <button class="button" onclick="goToPage(2)">Next</button>
+    </div>
+
+    <div id="page2" class="page">
+        <h1>Page 2</h1>
+        <button class="button" onclick="goToPage(1)">Previous</button>
+        <br><br>
+        <img src="image2.png" alt="Image 2" width="150" height="150">
+        <br><br>
+        <label>Label 2:</label>
+        <br>
+        <input type="text" class="input-text" placeholder="Enter text">
+        <br><br>
+        <input type="radio" class="radio" name="option" value="Option 1"> Option 1
+        <br>
+        <input type="radio" class="radio" name="option" value="Option 2"> Option 2
+        <br><br>
+        <input type="range" class="slider" min="0" max="100" value="50">
+        <br><br>
+        <button class="button" onclick="goToPage(3)">Next</button>
+    </div>
+
+    <div id="page3" class="page">
+        <h1>Page 3</h1>
+        <button class="button" onclick="goToPage(2)">Previous</button>
+        <br><br>
+        <img src="image3.png" alt="Image 3" width="250" height="250">
+        <br><br>
+        <label>Label 3:</label>
+        <br>
+        <input type="text" class="input-text" placeholder="Enter text">
+        <br><br>
+        <input type="checkbox" class="checkbox"> Checkbox 2
+        <br><br>
+        <div class="scrollable">
+            <label>List 2:</label>
+            <br>
+            <select class="list" size="5">
+                <option>Item 1</option>
+                <option>Item 2</option>
+                <option>Item 3</option>
+                <option>Item 4</option>
+                <option>Item 5</option>
+            </select>
+        </div>
+        <br><br>
+        <button class="button" onclick="goToPage(1)">Previous</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const pages = document.getElementsByClassName("page");
+
+        function goToPage(pageNumber) {
+            pages[currentPage - 1].classList.remove("active-page");
+            pages[pageNumber - 1].classList.add("active-page");
+            currentPage = pageNumber;
+        }
+    </script>
+</body>
+</html>
